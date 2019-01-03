@@ -64,7 +64,6 @@ threeRound = getRobot (fight (fight r1Fight r2Fight) (fight r2Fight r1Fight)) ++
 --                                r2Fight = fight robot2 robot1
 --                                in getRobot (fight (fight r1Fight r2Fight) (fight r2Fight r1Fight)) ++ getRobot (fight (fight r2Fight r1Fight) (fight r1Fight r2Fight))
 
-
 --round robot1 robot2 = fight robot1 robot2 (fight robot2 robot1)
 --nRoundFight robot1 robot2 1 = getRobot (fight robot1 robot2) ++ getRobot (fight robot2 robot1)
 --nRoundFight robot1 robot2 n = nRoundFight (fight robot1 robot2) (fight robot2 robot1) n-1

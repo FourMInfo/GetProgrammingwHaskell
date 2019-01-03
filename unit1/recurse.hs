@@ -93,6 +93,7 @@ squareAll (x:xs) = (x^2):squareAll xs
 myMap f [] = []
 myMap f (x:xs) = f x:myMap f xs
 
+myFilter :: (a -> Bool) -> [a] -> [a]
 myFilter f [] = []
 myFilter f (x:xs) = if f x 
                     then x:myFilter f xs
