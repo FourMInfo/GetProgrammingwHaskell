@@ -1,3 +1,7 @@
+--stack exec ghci --package random-fu
+-- import Data.Random
+-- couldn't use because of the Monad
+
 half :: Int -> Double
 half n = fromIntegral n / 2
 
@@ -7,7 +11,7 @@ halve n = n `div` 2
 printDouble :: Int -> String
 printDouble n = show (n*2)
 
---filter :: (a -> Bool) -> [a] -> [a]
+--filter :: (a -> Bool) -> [a] -> `[a]
 
 --head :: [a] -> a
 myTail :: [a] -> [a]
@@ -172,3 +176,31 @@ cycleSucc :: (Bounded a, Enum a, Eq a) => a -> a
 cycleSucc n = if n == maxBound
                 then minBound
                 else succ n
+
+class (Eq a, Enum a) => Die a where
+  roll :: Int -> a
+
+data SixSidedDie = S1 | S2 | S3 | S4 | S5 | S6 deriving (Enum,Eq,Show)
+-- instance Show SixSidedDie where
+--   show S1 = "1"
+--   show S2 = "2"
+--   show S3 = "3"
+--   show S4 = "4"
+--   show S5 = "5"
+--   show S6 = "6"
+-- instance Eq SixSidedDie where
+--   (==) S1 S1 = True
+--   (==) S2 S2 = True
+--   (==) S3 S3 = True
+--   (==) S4 S4 = True
+--   (==) S5 S5 = True
+--   (==) S6 S6 = True
+--   (==) _  _  = False
+-- instance Eq SixSidedDie where
+--   (==) num1 num2 = fromEnum num1 == fromEnum num2
+
+-- instance Ord SixSidedDie where
+--   compare num1 num2 = compare (fromEnum num1) (fromEnum num2)
+
+instance Die SixSidedDie where
+  roll n = toEnum (n `mod` 6)
