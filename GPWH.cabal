@@ -1,0 +1,69 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: aad6b27c77c506d56ea604ba2506aecc8d8901cc6dfee15e4845a7872fecb37a
+
+name:           GPWH
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/GPWH#readme>
+homepage:       https://github.com/githubuser/GPWH#readme
+bug-reports:    https://github.com/githubuser/GPWH/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/GPWH
+
+library
+  exposed-modules:
+      Setup
+      SumSq
+  other-modules:
+      Paths_GPWH
+  hs-source-dirs:
+      unit1
+      unit2
+      unit3
+      unit4
+      unit5
+      unit6
+      unit7
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable GPWH-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_GPWH
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      GPWH
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite GPWH-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_GPWH
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      GPWH
+    , base >=4.7 && <5
+  default-language: Haskell2010

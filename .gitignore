@@ -1,3 +1,5 @@
 .stack-work/
 unit1.cabal
 *~
+stack.yaml.lock
+.vscode/settings.json
